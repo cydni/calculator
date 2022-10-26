@@ -38,6 +38,7 @@ table{
 
 .display-text{
     padding-right: 25px;
+    padding-top: 5px;
 }
 
 .num-bttn, .op-bttn, .misc-bttn{
@@ -65,5 +66,13 @@ table{
 
 td:hover{
     background-color: gray;
+}
+
+@media screen and (max-width: 600px) {
+
+    
+    table .display{
+        width: 100%;
+    }
 }
 

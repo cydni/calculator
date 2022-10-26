@@ -41,7 +41,7 @@ table{
     padding-top: 5px;
 }
 
-.num-bttn, .op-bttn, .misc-bttn{
+.num-bttn, .op-bttn, .misc-bttn, .z-bttn{
     text-align: center;
     border-radius: 50px;
     background-color: lightgrey;
@@ -82,5 +82,17 @@ td:hover{
         width: 550px;
         height: 700px;
     }
+
+    .num-bttn, .op-bttn, .misc-bttn, .eq-bttn{
+        border-radius: 70px;
+        font-size: 60px;
+    }
+
+    .z-bttn{
+        padding-right: 130px !important;
+        font-size: 60px;
+        border-radius: 70px;
+    }
+    
 }
 

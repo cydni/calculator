@@ -70,9 +70,17 @@ td:hover{
 
 @media screen and (max-width: 600px) {
 
-    
-    table .display{
-        width: 100%;
+    .display{
+        width: 550px;
+        height: 150px;
+    }
+
+    .display-text{
+        font-size: 140px;
+    }
+    table {
+        width: 550px;
+        height: 700px;
     }
 }
 

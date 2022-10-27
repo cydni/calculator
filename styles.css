@@ -68,31 +68,7 @@ td:hover{
     background-color: gray;
 }
 
-@media screen and (max-width: 600px) {
 
-    .display{
-        width: 550px;
-        height: 150px;
-    }
-
-    .display-text{
-        font-size: 140px;
-    }
-    table {
-        width: 550px;
-        height: 700px;
-    }
-
-    .num-bttn, .op-bttn, .misc-bttn, .eq-bttn{
-        border-radius: 70px;
-        font-size: 60px;
-    }
-
-    .z-bttn{
-        padding-right: 130px !important;
-        font-size: 60px;
-        border-radius: 70px;
-    }
     
-}
+
 

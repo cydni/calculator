@@ -12,34 +12,30 @@ numBttns
         console.log('number clicked');
         if(displayText.textContent === "0"){
             displayText.textContent = bttn.textContent;
-            console.log('case 1');
         }
         else if(displayText.textContent.includes('.')){
             displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "");
-            console.log('case 2');
         }
         else if(operatorPressed){
             operatorPressed = false;
             displayText.textContent = bttn.textContent;
-            console.log('case 3');
         }
         else{
             displayText.textContent = displayText.textContent + "" + bttn.textContent;
-            console.log('case 4');
         }
     })
         
 );
 
 opBttns
-.forEach( bttn =>
+.forEach( bttn => {
 
     bttn.addEventListener("click", () => {
         
         operatorPressed = true;
         //turn ac into c here
         switch(bttn.textContent){
-            case "÷":
+            /*case "÷":
                 console.log('÷');
                 break;
             case "×":
@@ -50,15 +46,18 @@ opBttns
                 break;
             case "+":
                 console.log('+');
-                break;
+                break;*/
             case "=":
                 console.log('=');
-                
+                expression.push(displayText.textContent);
+                displayText.textContent = eval(expression.join(""));
+                expression = [];
                 break;
             case "AC":
                 console.log("AC");
                 operatorPressed = false;
                 displayText.textContent = "0";
+                expression = [];
                 break;
             case "+/-":
                 console.log("+/-");
@@ -70,9 +69,18 @@ opBttns
                 break;
             default:
                 console.log('operation');
+                let last_item = expression[expression.length-1];
+                if(["+", "-", "×", "÷"].includes(last_item) && operatorPressed){
+                    expression.pop();
+                    expression.push(bttn.textContent);
+                }
+                else{
+                    expression.push(displayText.textContent);
+                    expression.push(bttn.textContent);
+                }
+                
+                operatorPressed = true;
                 break;
         }
-    })
-
-        
-);
+    })  
+});

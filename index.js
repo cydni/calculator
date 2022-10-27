@@ -1,4 +1,5 @@
 let displayText = document.getElementById("display-text");
+let operatorPressed = false;
 let expression = [];
 
 const numBttns = document.querySelectorAll('td[class=num-bttn]');
@@ -14,6 +15,14 @@ numBttns
         if(displayText.textContent === "0"){
             displayText.textContent = bttn.textContent;
         }
+        else if(displayText.textContent.includes('.')){
+            //displayText.textContent = displayText.textContent;
+            displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "")
+        }
+        else if(operatorPressed){
+            operatorPressed = false;
+            displayText.textContent = bttn.textContent
+        }
         else{
             displayText.textContent = displayText.textContent + "" + bttn.textContent;
         }
@@ -26,6 +35,8 @@ opBttns
 
     bttn.addEventListener("click", () => {
         
+        operatorPressed = true;
+
         switch(bttn.textContent){
             case "÷":
                 console.log('÷');
@@ -45,9 +56,8 @@ opBttns
 
             case "AC":
                 console.log("AC");
-                currentNum = 0;
                 expression = [];
-                displayText.textContent = currentNum;
+                displayText.textContent = "0";
                 break;
             case "+/-":
                 console.log("+/-");

@@ -41,7 +41,7 @@ table{
     padding-top: 5px;
 }
 
-.num-bttn, .op-bttn, .z-bttn{
+.num-bttn, .op-bttn, #z-bttn{
     text-align: center;
     border-radius: 50px;
     background-color: lightgrey;
@@ -50,7 +50,7 @@ table{
     color: #3a3b3c;
 }
 
-.eq-bttn{
+#eq-bttn{
     text-align: center;
     border-radius: 50px;
     background-color: #a1045a;
@@ -59,7 +59,7 @@ table{
     color:white;
 }
 
-.eq-bttn:hover{
+#eq-bttn:hover{
     background-color: #630436 ;
     color:white;
 }

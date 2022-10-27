@@ -9,8 +9,10 @@ numBttns
 .forEach( bttn =>
 
     bttn.addEventListener("click", () => {
-        console.log('clicked');
-        displayText.textContent = bttn.textContent;
+        console.log('number clicked');
+        expression.push(bttn.textContent);
+        displayText.textContent = expression.join('');
+        
     })
         
 );
@@ -19,7 +21,38 @@ opBttns
 .forEach( bttn =>
 
     bttn.addEventListener("click", () => {
-        console.log('operation');
+        
+        switch(bttn.textContent){
+            case "÷":
+                console.log('÷');
+                break;
+            case "×":
+                console.log('×');
+                break;
+            case "-":
+                console.log('-');
+                break;
+            case "+":
+                console.log('+');
+                break;
+            case "=":
+                console.log('-');
+                break;
+
+            case "AC":
+                console.log("AC");
+                break;
+            case "+/-":
+                console.log("+/-");
+                break;
+            case "%":
+                console.log("%");
+                break;
+            default:
+                console.log('operation');
+                break;
+        }
     })
+
         
 );

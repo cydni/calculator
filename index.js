@@ -13,12 +13,12 @@ numBttns
         if(displayText.textContent === "0"){
             displayText.textContent = bttn.textContent;
         }
-        else if(displayText.textContent.includes('.')){
-            displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "");
-        }
         else if(operatorPressed){
             operatorPressed = false;
             displayText.textContent = bttn.textContent;
+        }
+        else if(displayText.textContent.includes('.')){
+            displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "");
         }
         else{
             displayText.textContent = displayText.textContent + "" + bttn.textContent;
@@ -36,7 +36,6 @@ opBttns
         //turn ac into c here
         switch(bttn.textContent){
             case "=":
-                //console.log('=');
                 expression.push(displayText.textContent);
                 displayText.textContent = eval(expression.join(""));
                 expression = [];
@@ -56,9 +55,7 @@ opBttns
                 let last_item = expression[expression.length-1];
                 if(["+", "-", "*", "/"].includes(last_item) && operatorPressed){
                     expression.pop();
-                    //expression.push(bttn.textContent);
                     expression.push(bttn.getAttribute('data-value'));
-                    console.log('hi');
                 }
                 else{
                     expression.push(displayText.textContent);
@@ -71,3 +68,9 @@ opBttns
         }
     })  
 });
+
+//TO DO:
+//add active class for the operation pressed so that the last operator pressed
+//looks different
+//understand calculator a bit better
+//issue with adding numbers to decimals

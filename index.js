@@ -9,7 +9,7 @@ numBttns
 .forEach( bttn =>
 
     bttn.addEventListener("click", () => {
-        console.log('number clicked');
+        //console.log('number clicked');
         if(displayText.textContent === "0"){
             displayText.textContent = bttn.textContent;
         }
@@ -35,48 +35,35 @@ opBttns
         operatorPressed = true;
         //turn ac into c here
         switch(bttn.textContent){
-            /*case "÷":
-                console.log('÷');
-                break;
-            case "×":
-                console.log('×');
-                break;
-            case "-":
-                console.log('-');
-                break;
-            case "+":
-                console.log('+');
-                break;*/
             case "=":
-                console.log('=');
+                //console.log('=');
                 expression.push(displayText.textContent);
                 displayText.textContent = eval(expression.join(""));
                 expression = [];
                 break;
             case "AC":
-                console.log("AC");
                 operatorPressed = false;
                 displayText.textContent = "0";
                 expression = [];
                 break;
             case "+/-":
-                console.log("+/-");
                 displayText.textContent = parseFloat(displayText.textContent) * (-1);
                 break;
             case "%":
-                console.log("%");
                 displayText.textContent = parseFloat(displayText.textContent) / 100;
                 break;
             default:
-                console.log('operation');
                 let last_item = expression[expression.length-1];
-                if(["+", "-", "×", "÷"].includes(last_item) && operatorPressed){
+                if(["+", "-", "*", "/"].includes(last_item) && operatorPressed){
                     expression.pop();
-                    expression.push(bttn.textContent);
+                    //expression.push(bttn.textContent);
+                    expression.push(bttn.getAttribute('data-value'));
+                    console.log('hi');
                 }
                 else{
                     expression.push(displayText.textContent);
-                    expression.push(bttn.textContent);
+                    expression.push(bttn.getAttribute('data-value'));
+                    console.log(expression);
                 }
                 
                 operatorPressed = true;

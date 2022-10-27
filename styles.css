@@ -41,7 +41,7 @@ table{
     padding-top: 5px;
 }
 
-.num-bttn, .op-bttn, .misc-bttn, .z-bttn{
+.num-bttn, .op-bttn, .z-bttn{
     text-align: center;
     border-radius: 50px;
     background-color: lightgrey;

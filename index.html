@@ -17,14 +17,14 @@
                 
                 <!--row 2-->
                 <tr>
-                    <td class="misc-bttn">AC</td>
-                    <td class="misc-bttn">+/-</td>
-                    <td class="misc-bttn">%</td>
+                    <td class="op-bttn">AC</td>
+                    <td class="op-bttn">+/-</td>
+                    <td class="op-bttn">%</td>
                     <td class="op-bttn">÷</td>
                 </tr>
                 <!--row 3-->
                 <tr>
-                    <td class="num-bttn" id="one-bttn" onclick="changeDisplay(1)">1</td>
+                    <td class="num-bttn" id="one-bttn">1</td>
                     <td class="num-bttn">2</td>
                     <td class="num-bttn">3</td>
                     <td class="op-bttn">×</td>
@@ -58,21 +58,9 @@
             </div>
 
         </div>
+
+        <script src="index.js"></script>
     </body>
 
-    <script>
-
-        /*Create an array to hold the infix or postfix version of the operations
-         have another array to hold the number that should be displayed (should reset after an non number/non decimal point is hit
-         how can i read in a number as its typed in?
-         AC clears sets the number display back to 0 and clears to array holding the expression
-         = evaluates the expression*/
-        let display = document.getElementById('display-text');
-
-        function changeDisplay(num){
-            display.innerHTML = '1';
-        }
-
-    </script>
-
 </html>
+

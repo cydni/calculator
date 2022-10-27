@@ -10,21 +10,22 @@ numBttns
 
     bttn.addEventListener("click", () => {
         console.log('number clicked');
-        //expression.push(bttn.textContent);
-        //displayText.textContent = expression.join('');
         if(displayText.textContent === "0"){
             displayText.textContent = bttn.textContent;
+            console.log('case 1');
         }
         else if(displayText.textContent.includes('.')){
-            //displayText.textContent = displayText.textContent;
-            displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "")
+            displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "");
+            console.log('case 2');
         }
         else if(operatorPressed){
             operatorPressed = false;
-            displayText.textContent = bttn.textContent
+            displayText.textContent = bttn.textContent;
+            console.log('case 3');
         }
         else{
             displayText.textContent = displayText.textContent + "" + bttn.textContent;
+            console.log('case 4');
         }
     })
         
@@ -36,7 +37,7 @@ opBttns
     bttn.addEventListener("click", () => {
         
         operatorPressed = true;
-
+        //turn ac into c here
         switch(bttn.textContent){
             case "÷":
                 console.log('÷');
@@ -53,10 +54,9 @@ opBttns
             case "=":
                 console.log('-');
                 break;
-
             case "AC":
+                operatorPressed = false;
                 console.log("AC");
-                expression = [];
                 displayText.textContent = "0";
                 break;
             case "+/-":

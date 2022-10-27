@@ -1,5 +1,4 @@
 let displayText = document.getElementById("display-text");
-let currentNum = 0;
 let expression = [];
 
 const numBttns = document.querySelectorAll('td[class=num-bttn]');
@@ -10,9 +9,14 @@ numBttns
 
     bttn.addEventListener("click", () => {
         console.log('number clicked');
-        expression.push(bttn.textContent);
-        displayText.textContent = expression.join('');
-        
+        //expression.push(bttn.textContent);
+        //displayText.textContent = expression.join('');
+        if(displayText.textContent === "0"){
+            displayText.textContent = bttn.textContent;
+        }
+        else{
+            displayText.textContent = displayText.textContent + "" + bttn.textContent;
+        }
     })
         
 );
@@ -41,6 +45,9 @@ opBttns
 
             case "AC":
                 console.log("AC");
+                currentNum = 0;
+                expression = [];
+                displayText.textContent = currentNum;
                 break;
             case "+/-":
                 console.log("+/-");

@@ -52,18 +52,21 @@ opBttns
                 console.log('+');
                 break;
             case "=":
-                console.log('-');
+                console.log('=');
+                
                 break;
             case "AC":
-                operatorPressed = false;
                 console.log("AC");
+                operatorPressed = false;
                 displayText.textContent = "0";
                 break;
             case "+/-":
                 console.log("+/-");
+                displayText.textContent = parseFloat(displayText.textContent) * (-1);
                 break;
             case "%":
                 console.log("%");
+                displayText.textContent = parseFloat(displayText.textContent) / 100;
                 break;
             default:
                 console.log('operation');

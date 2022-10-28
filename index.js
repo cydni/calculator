@@ -5,34 +5,52 @@ let expression = [];
 const numBttns = document.querySelectorAll('td[class=num-bttn]');
 const opBttns = document.querySelectorAll('td[class=op-bttn]');
 
+//operands
 numBttns
 .forEach( bttn =>
 
     bttn.addEventListener("click", () => {
         //console.log('number clicked');
+
+        if(document.getElementsByClassName("active").length > 0){
+            document.getElementsByClassName("active")[0].className = document.getElementsByClassName("active")[0].className.replace(" active", "");
+        }
+
         if(displayText.textContent === "0"){
             displayText.textContent = bttn.textContent;
+            console.log('case 1');
         }
         else if(operatorPressed){
             operatorPressed = false;
             displayText.textContent = bttn.textContent;
+            console.log('case 2');
         }
         else if(displayText.textContent.includes('.')){
             displayText.textContent = displayText.textContent + "" + bttn.textContent.replace(".", "");
+            console.log('case 3');
         }
         else{
             displayText.textContent = displayText.textContent + "" + bttn.textContent;
+            console.log('case 4');
         }
     })
         
 );
 
+//operators
 opBttns
 .forEach( bttn => {
 
     bttn.addEventListener("click", () => {
         
         operatorPressed = true;
+
+        if(document.getElementsByClassName("active").length > 0){
+            document.getElementsByClassName("active")[0].className = document.getElementsByClassName("active")[0].className.replace(" active", "");
+        }
+
+        bttn.classList.add("active");
+
         //turn ac into c here
         switch(bttn.textContent){
             case "=":
@@ -70,7 +88,7 @@ opBttns
 });
 
 //TO DO:
-//add active class for the operation pressed so that the last operator pressed
-//looks different
+//issue with 0?
 //understand calculator a bit better
-//issue with adding numbers to decimals
+//what should happen when you press inverse after pressing an operator -> show -0
+//add overflow to display

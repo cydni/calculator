@@ -76,6 +76,11 @@ td:hover{
     background-color: gray;
 }
 
+.active{
+    background-color: #a1045a;
+    color: white;
+}
+
 
     
 

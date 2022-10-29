@@ -87,7 +87,5 @@ opBttns
 });
 
 //TO DO:
-//issue with 0?
-//understand calculator a bit better
 //what should happen when you press inverse after pressing an operator -> show -0
-//add overflow to display
+//work on ac button

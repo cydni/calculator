@@ -34,11 +34,14 @@ table{
     font-size: 70px;
     color: #3a3b3c;
     font-weight: bold;
+    
+
 }
 
 .display-text{
     padding-right: 25px;
     padding-top: 5px;
+    overflow: hidden;
 }
 
 .num-bttn, .op-bttn, #z-bttn{

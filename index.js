@@ -10,13 +10,12 @@ numBttns
 .forEach( bttn =>
 
     bttn.addEventListener("click", () => {
-        //console.log('number clicked');
 
         if(document.getElementsByClassName("active").length > 0){
             document.getElementsByClassName("active")[0].className = document.getElementsByClassName("active")[0].className.replace(" active", "");
         }
 
-        if(displayText.textContent === "0"){
+        if(displayText.textContent === "0" && !(operatorPressed)){
             displayText.textContent = bttn.textContent;
             console.log('case 1');
         }
